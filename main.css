@@ -29,45 +29,73 @@ body {
     line-height: 1.3em;
 }
 
-.container {
-    height: 80%;
+.cards {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    gap: 4em;
-    padding-top: 3em;
-    position: relative;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
 }
 
-.gallery {
-    height: 9em;
-    width: 10em;
-    color: #ccc;
-    background-color: #414141;
-    font-size: 2em;
-    box-shadow: 0px 0px 30px black;
-    border: solid 3px #575757;
-    border-radius: 0.2em;
-    padding: 0.5em;
+.card {
+    width: 22rem;
+    height: 20rem;
+    background: radial-gradient(150rem circle at 0 0, #575757, transparent 0);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    box-shadow: 0px 0px 30px black;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
+}
+.card:hover {
+    transform: scale(0.99);
+    box-shadow: 0px 0px 20px black;
+}
+.card:hover::before {
+    opacity: 1;
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: radial-gradient(30rem circle at var(--xPos) var(--yPos), #fbfae6, transparent 80%);
+    opacity: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.gallery:hover {
-    box-shadow: 0px 0px 40px black;
-    transform: scale(1.01, 1.01);
+.card-content {
+    background: radial-gradient(200rem circle at var(--xPos) var(--yPos), #717168, transparent 10%);
     background-color: #414141;
+    border-radius: inherit;
+    transition: all 0.25s;
+    height: calc(100% - 0.2rem);
+    width: calc(100% - 0.2rem);
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
-.gallery > img {
-    width: 10em;
-    height: 6.5em;
-    border-radius: 0.1em;
+.card-content > img {
+    position: absolute;
+    top: 1rem;
+    width: 90%;
+    height: 66%;
+    border-radius: inherit;
     border: 1px solid #171717;
 }
 
-.gallery > p {
-    width: 10em;
-    text-align: center;
+.card-content > p {
+    font-size: 2rem;
+    line-height: 0;
     position: absolute;
+    bottom: 0.5rem;
 }

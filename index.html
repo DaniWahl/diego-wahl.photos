@@ -4,6 +4,7 @@
         <meta charset="utf-8" />
         <title>Diego Wahl - Astro- und Makrofotografie</title>
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script defer src="main.js"></script>
     </head>
     <body>
         <div class="header">
@@ -22,18 +23,24 @@
             <a target="_blank" href="assets/Abschlussarbeit.pdf">Abschlussarbeit von Diego Wahl, 2023 (144 MB)</a>
         </div>
 
-        <div class="container">
-            <div class="gallery" onclick="window.location = 'galleries/astro/'">
-                <img src="images/orionnebel.jpg" />
-                <p>Astrofotografie</p>
+        <div class="cards">
+            <div class="card" onclick="window.location = 'galleries/astro/'">
+                <div class="card-content">
+                    <img src="images/orionnebel.jpg" />
+                    <p>Astrofotografie</p>
+                </div>
             </div>
-            <div class="gallery" onclick="window.location = 'galleries/macro/'">
-                <img src="images/blume.jpg" />
-                <p>Makrofotografie</p>
+            <div class="card" onclick="window.location = 'galleries/macro/'">
+                <div class="card-content">
+                    <img src="images/blume.jpg" />
+                    <p>Makrofotografie</p>
+                </div>
             </div>
-            <div class="gallery" onclick="window.location = 'galleries/analog/'">
-                <img src="images/boncuk.jpg" />
-                <p>Analogfotos</p>
+            <div class="card" onclick="window.location = 'galleries/analog/'">
+                <div class="card-content">
+                    <img src="images/boncuk.jpg" />
+                    <p>Analogfotos</p>
+                </div>
             </div>
         </div>
     </body>
